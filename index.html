@@ -1,0 +1,337 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700" rel="stylesheet">
+        <title>Calcublind</title>
+	</head>
+	<body>
+		<div id="container">
+			<div id="calculator">
+				<div id="result">
+					<div id="output-text">
+						<div id="history">
+							<p id="history-value"></p>
+						</div>
+						<div id="output">
+							<p id="output-value"></p>
+						</div>
+					</div>
+					<div id="output-microphone">
+						<span id="microphone">
+						</span>
+						<span class="tooltip">Operations are plus, minus, multiply, divide &amp; reminder
+						The user input format is number + operation + number<br><br>
+						Eg: 2 multiply 5 will be 2 &times 5
+						</span>
+					</div>
+				</div>
+				<div id="keyboard">
+					<button class="operator" id="clear">C</button>
+					<button class="operator" id="backspace">CE</button>
+					<button class="operator" id="%">%</button>
+					<button class="operator" id="/">&#247;</button>
+					<button class="number" id="7">7</button>
+					<button class="number" id="8">8</button>
+					<button class="number" id="9">9</button>
+					<button class="operator" id="*">&times;</button>
+					<button class="number" id="4">4</button>
+					<button class="number" id="5">5</button>
+					<button class="number" id="6">6</button>
+					<button class="operator" id="-">-</button>
+					<button class="number" id="1">1</button>
+					<button class="number" id="2">2</button>
+					<button class="number" id="3">3</button>
+					<button class="operator" id="+">+</button>
+					<button class="empty" id="empty"></button>
+					<button class="number" id="0">0</button>
+					<button class="empty" id="empty"></button>
+					<button class="operator" id="=">=</button>
+				</div>
+			</div>
+		</div>
+		<script src="script.js"></script>
+        <script src="jquery.js"></script>
+
+
+<!-- = -->
+<script>
+$("#calculate-button").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('=' + answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- point(.) -->
+<script>
+$("#decimal-point").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('point');
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- 0 -->
+<script>
+$("#number-0").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance(answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- 1 -->
+<script>
+$("#number-1").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance(answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- 2 -->
+<script>
+$("#number-2").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance(answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- 3 -->
+<script>
+$("#number-3").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance(answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- 4 -->
+<script>
+$("#number-4").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance(answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- 5 -->
+<script>
+$("#number-5").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance(answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- 6 -->
+<script>
+$("#number-6").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance(answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- 7 -->
+<script>
+$("#number-7").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance(answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- 8 -->
+<script>
+$("#number-8").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance(answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- 9 -->
+<script>
+$("#number-9").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance(answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- + -->
+<script>
+$("#add-button").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('plus');
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- - -->
+<script>
+$("#subtract-button").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('minus');
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- x -->
+<script>
+$("#multiplication-button").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('multiply by');
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- / -->
+<script>
+$("#division-button").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('divided by');
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- % -->
+<script>
+$("#percent-button").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('% ='+answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- AC or C-->
+<script>
+$("#reset-button").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('Clear');
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- x^2 -->
+<script>
+$("#second-power-button").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('raise to power 2 ='+answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- x^3 -->
+<script>
+$("#third-power-button").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('raise to power 3 ='+answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- square root -->
+<script>
+$("#square-root-button").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('root 2 ='+answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- third root -->
+<script>
+$("#third-root-button").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('root 3 ='+answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- log10 -->
+<script>
+$("#log-base-10-button").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('log 10 ='+answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- x^y -->
+<script>
+$("#x-to-the-y-button").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('raise to power');
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- 10^x -->
+<script>
+$("#ten-to-the-x-button").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('as power of 10 ='+answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- pi -->
+<script>
+$("#pi-button").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('pi ='+answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- sin -->
+<script>
+$("#sin-button").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('sin ='+answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- cos -->
+<script>
+$("#cos-button").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('cos ='+answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- tan -->
+<script>
+$("#tan-button").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('tan ='+answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- e constant-button -->
+<script>
+$("#e-constant-button").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('constant e ='+answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+
+<!-- ee-button -->
+<script>
+$("#ee-button-button").click(function(){
+var answer = $("#input-output").html();
+var msg = new SpeechSynthesisUtterance('constant ee ='+answer);
+window.speechSynthesis.speak(msg);
+});
+</script>
+    
+
+	</body>
+</html>
