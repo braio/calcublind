@@ -77,32 +77,52 @@ for(var i =0;i<number.length;i++){
 	});
 }
 var microphone = document.getElementById('microphone');
+var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
+recognition.lang = 'en-US';
+recognition.interimResults = false;
+recognition.maxAlternatives = 1;
+
+operations = {"plus":"+",
+				"minus":"-",
+				"multiply":"*",
+				"multiplied":"*",
+				"divide":"/",
+				"divided":"/",
+				//"mod":"%",
+				"modulo":"%"};
+
+
+
 microphone.onclick=function(){
 	microphone.classList.add("record");
-	var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
-	recognition.lang = 'en-US';
 	recognition.start();
-	operations = {"plus":"+",
-				 "minus":"-",
-				 "multiply":"*",
-				 "multiplied":"*",
-				 "divide":"/",
-				 "divided":"/",
-				 "reminder":"%"}
-
-	recognition.onresult = function(event){
-		var input = event.results[0][0].transcript;
-		for(property in operations){
-			input= input.replace(property, operations[property]);
-		}
-		document.getElementById("output-value").innerText = input;
-		setTimeout(function(){
-			evaluate(input);
-		},2000);
-		microphone.classList.remove("record");
-	}
-
+	console.log("Recording");
 }
+
+recognition.onresult = function(event){
+	let last = event.results.length - 1;
+	let input = event.results[last][0].transcript;
+	console.log(input);
+	for(property in operations){
+		input= input.replace(property, operations[property]);
+	}
+	document.getElementById("output-value").innerText = input;
+	console.log(input);
+	setTimeout(function(){
+	 	evaluate(input);
+	},2000);
+	microphone.classList.remove("record");
+}
+
+recognition.onspeechend = function() {
+	console.log("Recording stopped");
+	recognition.stop();
+}
+  
+recognition.onerror = function(event) {
+	console.log('Error occurred in recognition: ' + event.error);
+}
+
 function evaluate(input){
 	try{
 		var result = eval(input);
